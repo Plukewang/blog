@@ -1,0 +1,150 @@
+a{
+    color: #FFFAFB;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+body{
+    background-color: #FFFAFB;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 2rem;
+    margin: 10px;
+}
+p{
+    color: #001011;
+    font-size: 1rem;
+}
+ul{
+    list-style-type: none;
+}   
+input{
+    border: 2px solid #001011;
+    text-align: justify;
+}
+footer{
+    background-color: #001011;
+    color: #FFFAFB;
+}
+.about{
+    grid-column: 2 /3 ;
+    grid-row: 2 / 3;
+    text-align: justify;
+    margin: 10px;
+}
+.hide{
+    display: none;
+}
+.blogbox{
+    grid-column: 2 /3 ;
+    grid-row: 3 / 5;
+
+}
+.navbar>*{
+    color: #FFFAFB;
+    padding-left: 10px;
+    margin: 5px 10px;
+
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(4, minmax(200px,auto));
+    grid-auto-rows: 200px;
+}
+.footer{
+
+    background-color: #001011;
+    grid-column: span 2;
+    grid-row-start: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.navbar{
+    grid-column: span 2;
+    grid-row: 1 span 1;
+    background-color: #001011;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.postbox{
+    grid-column: 1 span 2;
+    margin: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: justify;
+    color: #001011;
+}
+
+.write{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-basis: 100px;
+}
+.writeEdit{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 20px;
+    flex-basis: 100px;
+}
+.write>*{
+    padding: 0px;
+    margin: 10px;
+}
+.smalllabel{
+
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    color: #FFFAFB;
+}
+.biglabel{
+    height: 50px;
+    font-size: 2rem;
+    text-align: left;
+    color: #001011;
+}
+.content{
+
+    width: 400px;
+    margin: 10px;
+    padding-top: 5px;
+    padding-right: 10%;
+    padding-left: 5px;
+    padding-bottom: 200px;
+    border: 2px solid #001011;
+}
+.submit{
+    border: none;
+    background-color: #001011;
+    color: #FFFAFB;
+    text-align: center;
+}
+.write .submit{
+    width: 150px;
+}
+.text-display{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+.break{
+    flex-basis: 100%;
+    height: 0;
+}

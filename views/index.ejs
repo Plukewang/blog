@@ -1,0 +1,87 @@
+<%- include("partials/header.ejs") %>
+
+
+
+  
+    <% if (!locals.posts){ %>
+      <h2>There's nothing here...</h2>
+      <p>Why not post something?</p>
+    <% } %>
+    
+
+
+    <%  if(locals.posts && locals.times){%>
+      <% for(let i = 0; i<times.length;i++){%>
+        <% let postContent = posts.get(times[i]), postTime = times[i];  %>
+        <div class = "postbox"> 
+
+          <% if(!locals.editRequest || editRequest != postTime){ %>
+            <p><%=postTime%></p>
+            <div class = "break"></div>
+          
+              <h2> <%= postContent[1] %> </h2>
+
+              <div class = "break"></div>
+
+            <p> <%= postContent[0] %> </p>
+            <div class = "break"></div>
+          <% } %>
+          <%# Delete Post Button %>
+          <form class="<%= hide%>" action = "/" method = "POST">
+            <input type="hidden" id = "deletePost" name = "deletePost" value = "<%=postTime%>" >
+            <input type="submit" class = "submit" value="Delete Post">
+          </form>
+          <%# Request Edit Post Button %>
+          <form class="<%= hide%>"  action = "/" method = "POST">
+            <input type="hidden" id = "editPost" name = "editPost" value = "<%=postTime%>" >
+            <input type="submit" class = "submit" value="Edit Post">
+          </form>
+          <%# Edit Post Button %>
+          <%if(locals.editRequest && editRequest==postTime){ %>
+            <div class = "writeEdit">
+              <form action = "/" method = "POST">
+                
+                <label for="name" value=""></label>
+                <input type="text" id="editName" name="editName" value = "<%= String(postContent[1])%>">
+
+                <label for="content"></label><br>
+                <textarea class = "content" id = "editContent" name = "editContent" value = "<%= String(postContent[0])%>"><%= String(postContent[0])%></textarea>
+              
+                <input type="hidden" id = "editTime" name = "editTime" value = "<%=editRequest%>" >
+                <input type="submit"  value="Finalize Edit">
+              </form> 
+            </div>
+            
+        <%  } %>
+
+      </div>
+        
+      <%  } %>
+      <% }  %>
+
+
+  <div class="about">
+    <h2>About This Website</h2>
+    <p>This website was made by Peiyang Wang as part of his web development project. Isn't it cool?</p>
+    <p>If you're a fan of this, just wait till you see what he cooks up next!</p>
+  </div>
+  <div class = "blogbox">
+    <form class = "write" action = "/" method = "POST">
+      
+      <label class = "biglabel" for="content"><h2>Make your post here</h2></label>
+
+      <div class = "smalllabel">
+        <label for="name" ></label>
+        <input type="text" id="name" name="name" placeholder="Title">
+      </div>
+
+      <textarea class = "content" id = "content" name = "content" placeholder="Your words here..." ></textarea>
+      
+  
+      <input type="submit" class = "submit"  value="Post Your Content">
+    </form> 
+  </div>
+
+<%- include("partials/footer.ejs") %>
+
+
