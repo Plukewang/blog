@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));//parses user requests
 app.use(express.static("public"));//locates the static files
 
 app.get("/",(req,res,next)=>{
-    console.log(posts.length);  
+    console.log("This is working!");
     res.render("index.ejs");
     next();
 })
